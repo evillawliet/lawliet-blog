@@ -10,6 +10,7 @@ export default function Post({
   postData: {
     title: string
     date: string
+    summary: string
     contentHtml: string
   }
 }) {
@@ -19,11 +20,11 @@ export default function Post({
         <title>{postData.title}</title>
       </Head>
       <article>
-        <h1 className="mt-7 mb-2 text-2xl">{postData.title}</h1>
+        <h1 className="mt-7 mb-2 text-3xl">{postData.title}</h1>
         <div className="text-gray-500 mb-5">
           <Date dateString={postData.date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div className="markdown-body" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>
   )

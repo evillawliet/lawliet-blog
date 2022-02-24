@@ -28,7 +28,7 @@ export default function Layout({
       <header className="h-24 shadow">
         <div className="max-w-screen-xl w-11/12 h-full flex flex-row justify-between mx-auto items-center">
           <Link href="/">
-            <a className="text-4xl">LAWLIET</a>
+            <a className={home ? "text-4xl" : "text-4xl text-green-500"}>LAWLIET</a>
           </Link>
           <Link href="/about">
             <a>
@@ -43,7 +43,7 @@ export default function Layout({
           </Link>
         </div>
       </header>
-      <main className="flex-1 max-w-screen-xl w-11/12 mx-auto">
+      <main className="flex-1 max-w-screen-xl w-11/12 mx-auto overflow-auto">
         {children}
         {!home && (
           <div className="my-4">
